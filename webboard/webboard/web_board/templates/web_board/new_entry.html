@@ -1,0 +1,12 @@
+{% extends "web_board/base.html" %}
+{% block content %}
+	<div id="new-entry">
+	<p><a href="{% url 'web_board:topic' topic.id %}">{{ topic }}</a></p>
+	<p>Add a new entry:</p>
+	<form action="{% url 'web_board:new_entry' topic.id %}" method='post'>    
+		{% csrf_token %}    
+		{{ form.as_p }}    
+	<button name='submit' class="btn btn-primary">add entry</button>  
+	</form> 
+	</div>   
+{% endblock content %}

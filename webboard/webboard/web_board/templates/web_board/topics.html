@@ -1,0 +1,40 @@
+{% extends "web_board/base.html" %}
+{% block content %}
+<!--	<p>Topics</p>
+	<ul>
+		{% for topic in topics %} 
+			<li>        
+			<a href="{% url 'web_board:topic' topic.id %}">{{ topic }}</a>      
+			</li>
+		{% empty %}
+		<li>No topics have been added yet.</li>
+		{% endfor %}
+	</ul>
+	<a href="{% url 'web_board:new_topic' %}">Add a new topic:</a>-->
+	
+	<div id="topics">
+	<div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Topics
+                    </h3>
+                </div>
+                <ul class="list-group">
+                    
+                    
+                    {% for topic in topics %} 
+						        
+						<a href="{% url 'web_board:topic' topic.id %}" class="list-group-item">{{ topic }}</a>      
+						
+					{% empty %}
+					<li>No topics have been added yet.</li>
+					{% endfor %}
+                </ul>
+            </div>
+            <br>
+                	<a href="{% url 'web_board:new_topic' %}" class="list-group-item active">Add a topic:</a>
+        </div>
+    </div>
+{% endblock content %}
+

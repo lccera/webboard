@@ -1,0 +1,27 @@
+{% extends "web_board/base.html" %}
+{% block header %}
+<div id = "landing-page">
+	<div class='jumbotron'>    
+		<h1>Your secrets are safe.</h1>          
+	</div> {% endblock header %}
+{% block content %}
+	<h2>
+		<!--<a href="{% url 'users:register' %}">Register an account</a> and be heard.  -->
+		
+		{% for entry in entries %} 
+	  	<div class="panel panel-default"> 
+	  		<div class="panel-heading"> 
+	  			<h3>          
+	  				{{ entry.date_added|date:'M d, Y H:i' }} by anonymous   
+	  			</h3>      
+	  		</div> 
+		  	<div class="panel-body"> 
+		  		{{ entry.text|linebreaks }}      
+		  	</div>    
+	  	</div> <!-- panel -->
+		{% empty %}    
+			Be Heard. <small>Submit your confession now.</small>  
+		{% endfor %}
+	</h2>  
+</div>	
+{% endblock content %}

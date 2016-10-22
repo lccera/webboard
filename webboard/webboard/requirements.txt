@@ -1,0 +1,14 @@
+dj-database-url==0.4.1
+dj-static==0.0.6
+Django==1.10.2
+django-bootstrap3==7.1.0
+django-comments-xtd==1.6.3
+django-contrib-comments==1.7.3
+django-markup==1.1
+docutils==0.12
+gunicorn==19.6.0
+Markdown==2.6.7
+PyMySQL==0.7.9
+six==1.10.0
+static3==0.7.0
+psycopg2>=2.6.1

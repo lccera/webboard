@@ -1,0 +1,28 @@
+{% extends 'web_board/base.html' %}
+<div id="topic-list">
+{% block header %}  
+	<h2>{{ topic }}</h2> 
+{% endblock header %}
+
+{% block content %}  
+	<p>    
+		<a href="{% url 'web_board:new_entry' topic.id %}">add new entry</a>  
+	</p>
+
+ 	 {% for entry in entries %} 
+  	<div class="panel panel-primary"> 
+  		<a href="{% url 'web_board:entry' entry.id %}">
+  		<div class="panel-heading" style="background-color: #3385ff;"> 
+  			<h3 class="panel-title" style="color:white;">          
+  				{{ entry.date_added|date:'M d, Y H:i' }}
+  			</h3>
+  		</div> </a>
+	  	<div class="panel-body"> 
+	  		{{ entry.text|linebreaks }}      
+	  	</div>    
+  	</div> <!-- panel -->
+	{% empty %}    
+		There are no entries for this topic yet.  
+	{% endfor %}
+</div>
+{% endblock content %}

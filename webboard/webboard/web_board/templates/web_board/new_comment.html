@@ -1,0 +1,11 @@
+{% extends "web_board/base.html" %}
+{% block content %}
+	<div id = "new-comment">
+	<p>Add a new comment:</p> 
+	<form action="{% url 'web_board:new_comment' entry.id %}" method='post'> 
+		{% csrf_token %}    
+		{{ form.as_p }}    
+	<button name='submit' class="btn btn-primary">add comment</button>  
+	</form>    
+	</div>
+{% endblock content %}
